@@ -37,7 +37,7 @@ public class Personaje{
     private Datos datosDePj = new Datos();
     private Caracteristicas caracteristicaDePj = new Caracteristicas();
     DateTime hoy = DateTime.Today;
-    private edad = 0;
+    private int edad = 0;
 
     public Datos DatosDePj { get => datosDePj; set => datosDePj = value; }
     public Caracteristicas CaracteristicaDePj { get => caracteristicaDePj; set => caracteristicaDePj = value; }
