@@ -3,10 +3,10 @@ enum Tipos{
     Asesino, Bardo, Cazador, Clerigo, Druida, Guerrero, Mago,  Paladin, Pirata
 }
 enum Nombres{
-    Vladhimir, Nailhun, Thayron, Annie, Kantz
+    Vladhimir, Nailhun, Thayron, Annie, Kantz, Drako, Spoon, Lycan, Nerkov
 }
 enum Apodos{
-    CaraCortada, Infierno, Munieko, Drako, Itachi
+    CaraCortada, Infierno, Munieko, Trauma, Lucifer, Vendetta, Maestro, Profesor, Perro
 }
 public class Datos {
     private Tipos tipo;
@@ -44,7 +44,99 @@ public class Personaje{
     public DateTime Hoy { get => hoy; set => hoy = value; }
     public int Edad { get => edad; set => edad = value; }
 
-    
+    public int EdadDePj(DateTime FechaDeCreacion){
+        Edad = Hoy.Year - FechaDeCreacion.Year;
+        if (FechaDeCreacion.Month > Hoy.Month){
+            Edad = Edad - 1;
+        }
+        return Edad;
+    }
+
+
+    public Personaje cargarPersonaje(){
+        Personaje personaje = new Personaje();
+        Random rand = new Random();
+        int datoRandom = rand.Next(1, 10);
+        switch (datoRandom)
+        {
+            case 1:
+                personaje.DatosDePj.Tipo = Tipos.Asesino;
+                personaje.datosDePj.Nombre = Nombres.Drako;
+                personaje.DatosDePj.Apodo = Apodos.CaraCortada;
+                break;
+            case 2:
+                personaje.DatosDePj.Tipo = Tipos.Bardo;
+                personaje.datosDePj.Nombre = Nombres.Annie;
+                personaje.DatosDePj.Apodo = Apodos.Vendetta;
+                break;
+            case 3:
+                personaje.DatosDePj.Tipo = Tipos.Cazador;
+                personaje.datosDePj.Nombre = Nombres.Kantz;
+                personaje.DatosDePj.Apodo = Apodos.Infierno;
+                break;
+            case 4:
+                personaje.DatosDePj.Tipo = Tipos.Clerigo;
+                personaje.datosDePj.Nombre = Nombres.Vladhimir;
+                personaje.DatosDePj.Apodo = Apodos.Maestro;
+                break;
+            case 5:
+                personaje.DatosDePj.Tipo = Tipos.Druida;
+                personaje.datosDePj.Nombre = Nombres.Nailhun;
+                personaje.DatosDePj.Apodo = Apodos.Lucifer;
+                break;
+            case 6:
+                personaje.DatosDePj.Tipo = Tipos.Guerrero;
+                personaje.datosDePj.Nombre = Nombres.Lycan;
+                personaje.DatosDePj.Apodo = Apodos.Munieko;
+                break;
+            case 7:
+                personaje.DatosDePj.Tipo = Tipos.Mago;
+                personaje.datosDePj.Nombre = Nombres.Nerkov;
+                personaje.DatosDePj.Apodo = Apodos.Profesor;
+                break;
+            case 8:
+                personaje.DatosDePj.Tipo = Tipos.Paladin;
+                personaje.datosDePj.Nombre = Nombres.Spoon;
+                personaje.DatosDePj.Apodo = Apodos.Perro;
+                break;
+            case 9:
+                personaje.DatosDePj.Tipo = Tipos.Pirata;
+                personaje.datosDePj.Nombre = Nombres.Thayron;
+                personaje.DatosDePj.Apodo = Apodos.Trauma;
+                break;
+            default:
+                break;
+        }
+
+        personaje.DatosDePj.FechaDeCreacion = new DateTime(rand.Next(1800,2015), rand.Next(1,13), rand.Next(1,30));
+
+        personaje.DatosDePj.Edad = personaje.EdadDePj(personaje.DatosDePj.FechaDeCreacion);
+
+        personaje.DatosDePj.Salud = 100;
+
+        personaje.CaracteristicaDePj.Velocidad = rand.Next(1,11);
+        personaje.CaracteristicaDePj.Destreza = rand.Next(1,6);
+        personaje.CaracteristicaDePj.Fuerza = rand.Next(1,10);
+        personaje.CaracteristicaDePj.Nivel = rand.Next(1,11);
+        personaje.CaracteristicaDePj.Armadura = rand.Next(1,11);
+
+        return personaje;
+    }   
+
+    public void MostrarPersonaje(){
+        Console.WriteLine("\n ---------- PERSONAJE ---------- \n");
+        Console.WriteLine("Tipo: "+DatosDePj.Tipo);
+        Console.WriteLine("Nombre: "+ DatosDePj.Nombre);
+        Console.WriteLine("Apodo: "+ DatosDePj.Apodo);
+        Console.WriteLine("Fecha de nacimiento del heroe: "+ DatosDePj.FechaDeCreacion);
+        Console.WriteLine($"Edad: {DatosDePj.Edad} anios");
+        Console.WriteLine($"Salud: {DatosDePj.Salud}");
+        Console.WriteLine($"Velocidad: {CaracteristicaDePj.Velocidad} m/s");
+        Console.WriteLine($"Destreza: {CaracteristicaDePj.Destreza}");
+        Console.WriteLine($"Fuerza: {CaracteristicaDePj.Fuerza}");
+        Console.WriteLine($"Nivel: {CaracteristicaDePj.Nivel}");
+        Console.WriteLine($"Armadura: {CaracteristicaDePj.Armadura}");
+    }
 
 
 }
