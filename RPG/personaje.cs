@@ -139,4 +139,20 @@ public class Personaje{
     }
 
 
+    public void MejorarHabilidades(Personaje HeroeGanador){
+        Random rand = new Random();
+        int valorRandom = rand.Next(1,4);
+        switch (valorRandom)
+        {
+            case 1:
+                HeroeGanador.CaracteristicaDePj.Fuerza = HeroeGanador.CaracteristicaDePj.Fuerza + rand.Next(5,11);
+                break;
+            case 2:
+                HeroeGanador.DatosDePj.Salud = HeroeGanador.DatosDePj.Salud + 10;
+                break;
+            default:
+                HeroeGanador.CaracteristicaDePj.Armadura = HeroeGanador.CaracteristicaDePj.Armadura + rand.Next(1,6);
+                break;
+        }
+    }
 }
