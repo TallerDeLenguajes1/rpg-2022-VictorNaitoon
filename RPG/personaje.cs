@@ -54,73 +54,73 @@ public class Personaje{
 
 
     public Personaje cargarPersonaje(){
-        Personaje personaje = new Personaje();
+        Personaje Heroe = new Personaje();
         Random rand = new Random();
         int datoRandom = rand.Next(1, 10);
         switch (datoRandom)
         {
             case 1:
-                personaje.DatosDePj.Tipo = Tipos.Asesino;
-                personaje.datosDePj.Nombre = Nombres.Drako;
-                personaje.DatosDePj.Apodo = Apodos.CaraCortada;
+                Heroe.DatosDePj.Tipo = Tipos.Asesino;
+                Heroe.datosDePj.Nombre = Nombres.Drako;
+                Heroe.DatosDePj.Apodo = Apodos.CaraCortada;
                 break;
             case 2:
-                personaje.DatosDePj.Tipo = Tipos.Bardo;
-                personaje.datosDePj.Nombre = Nombres.Annie;
-                personaje.DatosDePj.Apodo = Apodos.Vendetta;
+                Heroe.DatosDePj.Tipo = Tipos.Bardo;
+                Heroe.datosDePj.Nombre = Nombres.Annie;
+                Heroe.DatosDePj.Apodo = Apodos.Vendetta;
                 break;
             case 3:
-                personaje.DatosDePj.Tipo = Tipos.Cazador;
-                personaje.datosDePj.Nombre = Nombres.Kantz;
-                personaje.DatosDePj.Apodo = Apodos.Infierno;
+                Heroe.DatosDePj.Tipo = Tipos.Cazador;
+                Heroe.datosDePj.Nombre = Nombres.Kantz;
+                Heroe.DatosDePj.Apodo = Apodos.Infierno;
                 break;
             case 4:
-                personaje.DatosDePj.Tipo = Tipos.Clerigo;
-                personaje.datosDePj.Nombre = Nombres.Vladhimir;
-                personaje.DatosDePj.Apodo = Apodos.Maestro;
+                Heroe.DatosDePj.Tipo = Tipos.Clerigo;
+                Heroe.datosDePj.Nombre = Nombres.Vladhimir;
+                Heroe.DatosDePj.Apodo = Apodos.Maestro;
                 break;
             case 5:
-                personaje.DatosDePj.Tipo = Tipos.Druida;
-                personaje.datosDePj.Nombre = Nombres.Nailhun;
-                personaje.DatosDePj.Apodo = Apodos.Lucifer;
+                Heroe.DatosDePj.Tipo = Tipos.Druida;
+                Heroe.datosDePj.Nombre = Nombres.Nailhun;
+                Heroe.DatosDePj.Apodo = Apodos.Lucifer;
                 break;
             case 6:
-                personaje.DatosDePj.Tipo = Tipos.Guerrero;
-                personaje.datosDePj.Nombre = Nombres.Lycan;
-                personaje.DatosDePj.Apodo = Apodos.Munieko;
+                Heroe.DatosDePj.Tipo = Tipos.Guerrero;
+                Heroe.datosDePj.Nombre = Nombres.Lycan;
+                Heroe.DatosDePj.Apodo = Apodos.Munieko;
                 break;
             case 7:
-                personaje.DatosDePj.Tipo = Tipos.Mago;
-                personaje.datosDePj.Nombre = Nombres.Nerkov;
-                personaje.DatosDePj.Apodo = Apodos.Profesor;
+                Heroe.DatosDePj.Tipo = Tipos.Mago;
+                Heroe.datosDePj.Nombre = Nombres.Nerkov;
+                Heroe.DatosDePj.Apodo = Apodos.Profesor;
                 break;
             case 8:
-                personaje.DatosDePj.Tipo = Tipos.Paladin;
-                personaje.datosDePj.Nombre = Nombres.Spoon;
-                personaje.DatosDePj.Apodo = Apodos.Perro;
+                Heroe.DatosDePj.Tipo = Tipos.Paladin;
+                Heroe.datosDePj.Nombre = Nombres.Spoon;
+                Heroe.DatosDePj.Apodo = Apodos.Perro;
                 break;
             case 9:
-                personaje.DatosDePj.Tipo = Tipos.Pirata;
-                personaje.datosDePj.Nombre = Nombres.Thayron;
-                personaje.DatosDePj.Apodo = Apodos.Trauma;
+                Heroe.DatosDePj.Tipo = Tipos.Pirata;
+                Heroe.datosDePj.Nombre = Nombres.Thayron;
+                Heroe.DatosDePj.Apodo = Apodos.Trauma;
                 break;
             default:
                 break;
         }
 
-        personaje.DatosDePj.FechaDeCreacion = new DateTime(rand.Next(1800,2015), rand.Next(1,13), rand.Next(1,30));
+        Heroe.DatosDePj.FechaDeCreacion = new DateTime(rand.Next(1800,2015), rand.Next(1,13), rand.Next(1,30));
 
-        personaje.DatosDePj.Edad = personaje.EdadDePj(personaje.DatosDePj.FechaDeCreacion);
+        Heroe.DatosDePj.Edad = Heroe.EdadDePj(Heroe.DatosDePj.FechaDeCreacion);
 
-        personaje.DatosDePj.Salud = 100;
+        Heroe.DatosDePj.Salud = 100;
 
-        personaje.CaracteristicaDePj.Velocidad = rand.Next(1,11);
-        personaje.CaracteristicaDePj.Destreza = rand.Next(1,6);
-        personaje.CaracteristicaDePj.Fuerza = rand.Next(1,10);
-        personaje.CaracteristicaDePj.Nivel = rand.Next(1,11);
-        personaje.CaracteristicaDePj.Armadura = rand.Next(1,11);
+        Heroe.CaracteristicaDePj.Velocidad = rand.Next(1,11);
+        Heroe.CaracteristicaDePj.Destreza = rand.Next(1,6);
+        Heroe.CaracteristicaDePj.Fuerza = rand.Next(1,10);
+        Heroe.CaracteristicaDePj.Nivel = rand.Next(1,11);
+        Heroe.CaracteristicaDePj.Armadura = rand.Next(1,11);
 
-        return personaje;
+        return Heroe;
     }   
 
     public void MostrarPersonaje(){
