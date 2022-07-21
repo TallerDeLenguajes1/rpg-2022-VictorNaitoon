@@ -27,6 +27,7 @@ public class Combate{
         //Valores de Defensa
         PDEF = Defensor.CaracteristicaDePj.Armadura * Defensor.CaracteristicaDePj.Velocidad;
 
+
         //Resultado del Enfrentamiento
         MDP = 50000;
 
