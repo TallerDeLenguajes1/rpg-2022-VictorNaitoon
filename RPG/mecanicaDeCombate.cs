@@ -19,24 +19,18 @@ public class Combate{
 
         //Valores de Ataque
         PD = Atacante.CaracteristicaDePj.Destreza * Atacante.CaracteristicaDePj.Fuerza * Atacante.CaracteristicaDePj.Nivel;
-        Console.WriteLine($"Poder de disparo del {Atacante.DatosDePj.Apodo}: "+PD);
 
         ED = rand.Next(1,101);
-        Console.WriteLine("Efectividad del disparo: "+ED);
 
         VA = (PD * ED) / 100;
-        Console.WriteLine("Valor de ataque: "+VA);
 
         //Valores de Defensa
         PDEF = Defensor.CaracteristicaDePj.Armadura * Defensor.CaracteristicaDePj.Velocidad;
-        Console.WriteLine("Poder de defensa: "+PDEF);
-
 
         //Resultado del Enfrentamiento
         MDP = 50000;
 
         DP = (((VA * ED) - PDEF) / MDP) * 100;
-        Console.WriteLine("Daño provocado: "+DP);
 
         Defensor.DatosDePj.Salud = Defensor.DatosDePj.Salud - DP;
 
