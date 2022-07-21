@@ -14,11 +14,11 @@ public class Datos {
     private Apodos apodo;
     private DateTime fechaDeCreacion;
     private int edad;
-    private int salud;
+    private double salud;
 
     public DateTime FechaDeCreacion { get => fechaDeCreacion; set => fechaDeCreacion = value; }
     public int Edad { get => edad; set => edad = value; }
-    public int Salud { get => salud; set => salud = value; }
+    public double Salud { get => salud; set => salud = value; }
     internal Tipos Tipo { get => tipo; set => tipo = value; }
     internal Nombres Nombre { get => nombre; set => nombre = value; }
     internal Apodos Apodo { get => apodo; set => apodo = value; }
