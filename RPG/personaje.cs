@@ -53,11 +53,11 @@ public class Personaje{
     }
 
 
-    public Personaje cargarPersonaje(){
+    public Personaje cargarPersonaje(int dato){
         Personaje Heroe = new Personaje();
         Random rand = new Random();
-        int datoRandom = rand.Next(1, 10);
-        switch (datoRandom)
+        //int datoRandom = rand.Next(1, 10);
+        switch (dato)
         {
             case 1:
                 Heroe.DatosDePj.Tipo = Tipos.Asesino;
