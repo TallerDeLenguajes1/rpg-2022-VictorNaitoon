@@ -100,8 +100,24 @@ ListadoDePj[0].MostrarPersonaje();
 Console.WriteLine("CONGRATULATIONS Winner. It's the best of all time");
 
 //CARGADO DE LOS HEROES GANADORES EN UN ARCHIVO CSV
+string Ruta =@"D:\MISCOSAS\Desktop\Facultad\Programador Universitario\TALLER DE LENGUAJE 1\Juego\rpg-2022-VictorNaitoon\RPG";
+string ArchivoCSV = Ruta + @"\Ganadores.csv";
 
+FileStream FS;
+if (!File.Exists(ArchivoCSV)){
+    FS = File.Create(ArchivoCSV);
+    FS.Close();
+}
 
+using(StreamWriter Linea = File.AppendText(ArchivoCSV)){
+    Linea.WriteLine(ListadoDePj[0].DatosDePj.Nombre + "; " + ListadoDePj[0].DatosDePj.Apodo + "; " + ListadoDePj[0].DatosDePj.Tipo + "; " + ListadoDePj[0].DatosDePj.Edad + " anios ; " + ListadoDePj[0].DatosDePj.Salud + "  puntos de vida.");
+}
 //FIN DEL CARGADO DEL CSV
+
+
+//CARGADO DE LOS HEROES EN UN ARCHIVO JSON
+
+
+//FIN DEL CARGADO DEL JSON
 
 
