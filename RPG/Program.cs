@@ -2,8 +2,10 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+//LISTADO DE PERSONAJES
 List<Personaje> ListadoDePj = new List<Personaje>();
 var rand = new Random();
+/////////////////////////////////////////////
 
 //CARGADO DE PERSONAJES
 Console.WriteLine("Cargamos el listado de los personajes");
@@ -92,43 +94,14 @@ for (int i = 0; i < MaximoDePersonajes-1; i++)
 }
 Console.WriteLine("Fin de todos los combates");
 //FIN DE LOS COMBATES
+
 Console.WriteLine("El Heroe ganador de los combates es: ");
 ListadoDePj[0].MostrarPersonaje();
 Console.WriteLine("CONGRATULATIONS Winner. It's the best of all time");
 
-/*
-//Archivo csv
-string ArchivoCSV = "Ganadores.csv";
-
-if (!File.Exists(ArchivoCSV)){
-    File.Create(ArchivoCSV);
-}
+//CARGADO DE LOS HEROES GANADORES EN UN ARCHIVO CSV
 
 
+//FIN DEL CARGADO DEL CSV
 
 
-
-
-
-
-
-
-
-void AgregarHeroesAlCSV(List<Personaje> ListadoDePj, int Jugador1, int Jugador2, int JugadorLoser){
-    
-    if (Jugador1 == JugadorLoser){
-        Console.WriteLine($"\nJugador 1 eliminado usando a: {ListadoDePj[Jugador1].DatosDePj.Nombre} - {ListadoDePj[Jugador1].DatosDePj.Tipo}");
-
-        using (StreamWriter Lectura = File.AppendText(ArchivoCSV)){
-            Lectura.WriteLine("Heroe Ganador"+"Nombre del Heroe"+"Apodo del Heroe"+"Tipo del Heroe"+"Salud");
-            Lectura.WriteLine(ListadoDePj[Jugador2].DatosDePj.Tipo + ";" + ListadoDePj[Jugador2].DatosDePj.Nombre + ";" + ListadoDePj[Jugador2].DatosDePj.Apodo + ";" + ListadoDePj[Jugador2].DatosDePj.Tipo + ";" + ListadoDePj[Jugador2].DatosDePj.Salud);
-        }
-        string AdicionarLinea = $"{ListadoDePj[Jugador1].DatosDePj.Nombre}, {ListadoDePj[Jugador1].DatosDePj.Apodo} - {ListadoDePj[Jugador1].DatosDePj.Tipo} VS {ListadoDePj[Jugador2].DatosDePj.Nombre}, {ListadoDePj[Jugador2].DatosDePj.Apodo} - {ListadoDePj[Jugador2].DatosDePj.Tipo}  ==>  GANADOR: {ListadoDePj[Jugador2].DatosDePj.Nombre}, {ListadoDePj[Jugador2].DatosDePj.Apodo} - {ListadoDePj[Jugador2].DatosDePj.Tipo} con {ListadoDePj[Jugador2].DatosDePj.Salud} de salud restante\n";
-        File.AppendAllText(ArchivoCSV, AdicionarLinea);
-        ListadoDePj.Remove(ListadoDePj[Jugador1]);
-        
-
-
-    }
-}
-*/
