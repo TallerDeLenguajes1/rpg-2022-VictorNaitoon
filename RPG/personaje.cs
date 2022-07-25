@@ -1,17 +1,17 @@
 
-enum Tipos{
+public enum Tipos{
     Asesino, Bardo, Cazador, Clerigo, Druida, Guerrero, Mago,  Paladin, Pirata
 }
-enum Nombres{
+public enum Nombres{
     Vladhimir, Nailhun, Thayron, Annie, Kantz, Drako, Spoon, Lycan, Nerkov
 }
-enum Apodos{
+public enum Apodos{
     CaraCortada, Infierno, Munieko, Trauma, Lucifer, Vendetta, Maestro, Profesor, Perro
 }
 public class Datos {
-    private Tipos tipo;
-    private Nombres nombre;
-    private Apodos apodo;
+    public Tipos tipo;
+    public Nombres nombre;
+    public Apodos apodo;
     private DateTime fechaDeCreacion;
     private int edad;
     private double salud;
@@ -19,9 +19,9 @@ public class Datos {
     public DateTime FechaDeCreacion { get => fechaDeCreacion; set => fechaDeCreacion = value; }
     public int Edad { get => edad; set => edad = value; }
     public double Salud { get => salud; set => salud = value; }
-    internal Tipos Tipo { get => tipo; set => tipo = value; }
-    internal Nombres Nombre { get => nombre; set => nombre = value; }
-    internal Apodos Apodo { get => apodo; set => apodo = value; }
+    public Tipos Tipo { get => tipo; set => tipo = value; }
+    public Nombres Nombre { get => nombre; set => nombre = value; }
+    public Apodos Apodo { get => apodo; set => apodo = value; }
 }
 public class Caracteristicas {
    private int velocidad, destreza, fuerza, nivel, armadura;
